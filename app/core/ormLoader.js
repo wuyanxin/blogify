@@ -21,6 +21,6 @@ module.exports = function (app) {
     app.models[model.name] = app.db.define(model.name, model.attributes, model.options);
     global[modelName] = app.models[model.name];
   })
-  app.db.sync({force: true});
+  app.db.sync();
   console.log('db sync');
 }

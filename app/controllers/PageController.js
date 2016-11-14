@@ -1,12 +1,10 @@
 
 function* index() {
-  let ctx = this;
   console.log(this.params);
-  yield Post.findAll().then(posts => {
-    console.log('result', posts);
-    ctx.status = 200;
-    yield ctx.render('index', { posts });
-  });
+  let posts = yield Post.findAll();
+  console.log('result', posts);
+  this.status = 200;
+  yield this.render('index', { posts });
 }
 
 module.exports = {
