@@ -2,12 +2,23 @@
  * @Author: wuyanxin 
  * @Date: 2016-11-11 22:13:16 
  * @Last Modified by: wuyanxin<wyx.ethan@gmail.com>
- * @Last Modified time: 2016-11-12 16:58:21
+ * @Last Modified time: 2016-11-14 08:24:20
  */
 'use strict';
 
 let koa = require('koa');
+let render = require('koa-ejs');
+let path = require('path');
+
 let app = koa();
+
+render(app, {
+  root: path.join(__dirname, './app/views'),
+  layout: 'default',
+  viewExt: 'html',
+  cache: app.env === 'production',
+  debug: app.env !== 'production'
+});
 
 // load config TODO
 

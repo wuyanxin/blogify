@@ -2,6 +2,13 @@
 module.exports = [
   { 
     method: 'get', 
+    pattern: '/', 
+    controller: 'PageController',
+    action: 'index',
+    middlewares: []
+  },
+  { 
+    method: 'get', 
     pattern: '/posts', 
     controller: 'PostController',
     action: 'getList',
