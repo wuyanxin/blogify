@@ -1,8 +1,8 @@
 /*
  * @Author: wuyanxin 
  * @Date: 2016-11-11 22:13:16 
- * @Last Modified by: wuyanxin<wyx.ethan@gmail.com>
- * @Last Modified time: 2016-11-14 08:24:20
+ * @Last Modified by: wuyanxin
+ * @Last Modified time: 2016-11-15 23:16:28
  */
 'use strict';
 
@@ -12,12 +12,17 @@ let path = require('path');
 
 let app = koa();
 
-render(app, {
-  root: path.join(__dirname, './app/views'),
-  layout: 'default',
-  viewExt: 'html',
-  cache: app.env === 'production',
-  debug: app.env !== 'production'
+// render(app, {
+//   root: path.join(__dirname, './app/views'),
+//   layout: 'default',
+//   viewExt: 'html',
+//   cache: app.env === 'production',
+//   debug: app.env !== 'production'
+// });
+
+require('koa-react-views')(app, {
+  viewExt: '.jsx',
+  root: path.join(__dirname, './views')
 });
 
 // load config TODO
