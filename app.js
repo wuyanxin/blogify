@@ -2,10 +2,11 @@
  * @Author: wuyanxin 
  * @Date: 2016-11-11 22:13:16 
  * @Last Modified by: wuyanxin
- * @Last Modified time: 2016-11-15 23:16:28
+ * @Last Modified time: 2016-11-16 08:21:36
  */
 'use strict';
 
+require("babel-register");
 let koa = require('koa');
 let render = require('koa-ejs');
 let path = require('path');
@@ -22,7 +23,8 @@ let app = koa();
 
 require('koa-react-views')(app, {
   viewExt: '.jsx',
-  root: path.join(__dirname, './views')
+  root: path.join(__dirname, './views'),
+  transformViews: false
 });
 
 // load config TODO

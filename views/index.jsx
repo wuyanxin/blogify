@@ -1,20 +1,18 @@
 var React = require('react');
 var DefaultLayout = require('./layouts/default');
+var PostList = require('./components/postList'); 
  
-var HelloMessage = React.createClass({
+var Homepage = React.createClass({
   render: function() {
     return (
-      <DefaultLayout title={this.props.title}>
+      <DefaultLayout title={this.props.title} >
         <div>nav</div>
         <div>
-          body
-          <subnav />
-          <postList /> or <postDetails />
-          <footer />
+          <PostList posts={this.props.posts} />
         </div>
       </DefaultLayout>
     );
   }
 });
  
-module.exports = HelloMessage;
+module.exports = Homepage;
