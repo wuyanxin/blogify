@@ -2,7 +2,7 @@
  * @Author: wuyanxin 
  * @Date: 2016-11-11 22:13:16 
  * @Last Modified by: wuyanxin
- * @Last Modified time: 2016-11-16 08:21:36
+ * @Last Modified time: 2016-11-16 23:57:54
  */
 'use strict';
 
@@ -12,6 +12,10 @@ let render = require('koa-ejs');
 let path = require('path');
 
 let app = koa();
+
+console.log(app.config);
+app.config = require('./config.js');
+console.log(app.config);
 
 // render(app, {
 //   root: path.join(__dirname, './app/views'),
