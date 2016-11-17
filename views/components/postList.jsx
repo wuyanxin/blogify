@@ -5,7 +5,7 @@ var PostItem = React.createClass({
     return (
       <li>
         <h2>{this.props.data.title}</h2>
-        <img src={this.props.data.image} />
+        <img src={this.props.data.image} width="300px"/>
       </li>
     );
   }

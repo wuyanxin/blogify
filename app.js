@@ -2,7 +2,7 @@
  * @Author: wuyanxin 
  * @Date: 2016-11-11 22:13:16 
  * @Last Modified by: wuyanxin
- * @Last Modified time: 2016-11-16 23:57:54
+ * @Last Modified time: 2016-11-17 22:53:19
  */
 'use strict';
 
@@ -12,10 +12,7 @@ let render = require('koa-ejs');
 let path = require('path');
 
 let app = koa();
-
-console.log(app.config);
-app.config = require('./config.js');
-console.log(app.config);
+global.AppConfig = require('./config.js');
 
 // render(app, {
 //   root: path.join(__dirname, './app/views'),
@@ -30,8 +27,6 @@ require('koa-react-views')(app, {
   root: path.join(__dirname, './views'),
   transformViews: false
 });
-
-// load config TODO
 
 // load orm TODO
 require('./app/core/ormLoader')(app);
