@@ -9,11 +9,11 @@ var Nav = React.createClass({
           <a className="nav-logo" href={this.props.config.url}>
             <img src={this.props.config.logo} alt={this.props.config.blogName} className="img-circle"/>
           </a>
-          
+
           <ul className="nav-social pull-right">
-            {author.sns.map(function(item) {
+            {author.sns.map(function(item, index) {
               return (
-                <li>
+                <li key={index}>
                   <a rel="me" target="_blank" href={item.url}>
                     <img src={item.logo} alt={item.title} />
                   </a>
@@ -24,9 +24,9 @@ var Nav = React.createClass({
         </div>
 
         <ul className="nav-list">
-          {leftNav.map(function(item) {
+          {leftNav.map(function(item, index) {
             return (
-              <li>
+              <li key={index}>
                 <a href={item.url} target={item.target || '_self'}>
                   {item.title}
                 </a>
