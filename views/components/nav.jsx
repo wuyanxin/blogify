@@ -10,6 +10,10 @@ var Nav = React.createClass({
             <img src={this.props.config.logo} alt={this.props.config.blogName} className="img-circle"/>
           </a>
 
+          <h3 className="nav-author">
+            {this.props.config.author.name}
+          </h3>
+
           <ul className="nav-social pull-right">
             {author.sns.map(function(item, index) {
               return (
