@@ -1,8 +1,9 @@
 var React = require('react');
 var DefaultLayout = require('./layouts/default');
-var PostList = require('./components/postList'); 
-var Nav = require('./components/nav'); 
- 
+var PostList = require('./components/postList');
+var Nav = require('./components/nav');
+var TopNav = require('./components/topNav'); 
+
 var Homepage = React.createClass({
   render: function() {
     return (
@@ -12,11 +13,12 @@ var Homepage = React.createClass({
         </div>
 
         <div className="body col-md-8 col-md-offset-3">
+          <TopNav data={this.props.config.topNav} />
           <PostList posts={this.props.posts} />
         </div>
       </DefaultLayout>
     );
   }
 });
- 
+
 module.exports = Homepage;

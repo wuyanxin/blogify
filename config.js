@@ -18,7 +18,7 @@ const config = {
     topNav: [
       { type: 'filter', category: 'tech', title: '技术' },
       { type: 'filter', category: 'live', title: '生活' },
-      { type: 'page', title: '生活', url: '', target: '_blank' },
+      { type: 'page', title: '生活', url: '' },
     ],
 
     leftNav: [

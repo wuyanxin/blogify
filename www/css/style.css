@@ -88,3 +88,16 @@ button, input, select, textarea {
 .sidebar .nav-list li {
   line-height: 40px;
 }
+
+/*头部导航栏*/
+.topNav li {
+  display: inline-block;
+  /*line-height: 50px;*/
+
+}
+
+.topNav li a {
+  padding: 15px;
+  display: inline-block;
+  color: #999999;
+}
