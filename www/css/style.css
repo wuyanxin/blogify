@@ -14,7 +14,7 @@ ul {
   list-style: none;
 }
 
-a:hover {
+a:hover, a:visited, a:active {
   text-decoration: none;
 }
 
@@ -28,38 +28,6 @@ button, input, select, textarea {
   vertical-align: baseline;
 }
 
-/************
-  nav
-************/
-.nav {
-  color: #666;
-  font-size: 16px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-}
-
-.nav ul {
-  margin: 0;
-}
-
-.nav li {
-  line-height: 52px;
-  height: 50px;
-  padding: 0 20px;
-  display: inline-block;
-}
-
-.nav li.curpage a {
-  color: #333;
-}
-
-.nav li a {
-  color: #AAA;
-}
-
-.nav li a:hover {
-  color: #666;
-}
-
 /***************
   sidebar
 ****************/
@@ -70,6 +38,15 @@ button, input, select, textarea {
   top: 0;
   left: 0;
   color: #CCC;
+  font-size: 18px;
+}
+
+.sidebar li a {
+  color: #CCC;
+}
+
+.sidebar li a:hover {
+  color: #666;
 }
 
 .sidebar .about-us {
@@ -91,6 +68,16 @@ button, input, select, textarea {
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.sidebar .nav-social {
+  text-align: center;
+  padding-left: 0;
+}
+
+.sidebar .nav-social-item {
+  display: inline-block;
+  padding: 0 15px;
 }
 
 .sidebar .nav-header .nav-author {

@@ -1,5 +1,17 @@
 var React = require('react');
 
+var SNSLogo = React.createClass({
+  render: function () {
+    let logo = this.props.logo;
+    let title = this.props.title;
+    if (/^(http|https|\/\/)/.test(logo)) {
+      return <img src={logo} alt={title} />;
+    } else {
+      return <span className={'socicon ' + logo} alt={title} />;
+    }
+  }
+});
+
 var Nav = React.createClass({
   render: function() {
     let { author, leftNav } = this.props.config;
@@ -14,12 +26,12 @@ var Nav = React.createClass({
             {this.props.config.author.name}
           </h3>
 
-          <ul className="nav-social pull-right">
+          <ul className="nav-social">
             {author.sns.map(function(item, index) {
               return (
-                <li key={index}>
+                <li key={index} className="nav-social-item">
                   <a rel="me" target="_blank" href={item.url}>
-                    <img src={item.logo} alt={item.title} />
+                    <SNSLogo logo={item.logo} title={item.title} />
                   </a>
                 </li>
               );
