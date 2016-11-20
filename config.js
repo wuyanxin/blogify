@@ -3,21 +3,15 @@ const config = {
   development: {
     blogName: "Ethan's blog",
     url: 'http://wuyanxin.com',
-    logo: 'https://www.gravatar.com/avatar/0531873f81c71a5a9ee9e3071a4ffa87?s=250&d=mm&r=x',
-
-    database: {
-      host: 'localhost',
-      database: 'blogify',
-      user: 'root',
-      password: '123'
-    },
+    logo: 'https://www.gravatasr.com/avatar/0531873f81c71a5a9ee9e3071a4ffa87?s=250&d=mm&r=x',
 
     author: {
       name: '吴彦欣',
       avatar: 'https://www.gravatar.com/avatar/0531873f81c71a5a9ee9e3071a4ffa87?s=250&d=mm&r=x',
       sns: [
-        { logo: '/assets/images/icons/github-32px.png', url: 'http://github.com/wuyanxin', title: 'GitHub' },
-        { logo: '/assets/images/icons/github-32px.png', url: 'http://github.com/wuyanxin', title: 'GitHub' },
+        { logo: 'socicon-github', url: 'http://github.com/wuyanxin', title: 'GitHub' },
+        { logo: 'socicon-stackoverflow', url: 'http://stackoverflow.com/users/5550807/ethan-wu', title: 'StackoverFlow' },
+        { logo: 'socicon-rss', url: 'http://wuyanxn.com/fead', title: 'Feed' },
       ]
     },
 
@@ -37,7 +31,7 @@ const config = {
     global_after_script: '',
     post_before_script: '',
     post_after_script: '',
-  }, 
+  },
 
   production: {},
 }
