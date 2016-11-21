@@ -90,14 +90,30 @@ button, input, select, textarea {
 }
 
 /*头部导航栏*/
+.topNav {
+  border-bottom: 2px solid #d9d9d9;
+  font-size: 12px;
+}
+
 .topNav li {
   display: inline-block;
-  /*line-height: 50px;*/
-
 }
 
 .topNav li a {
-  padding: 15px;
+  padding: 15px 20px;
   display: inline-block;
   color: #999999;
+}
+
+.topNav li a:hover {
+  background-color: #EEE;
+}
+
+.topNav li.active {
+  margin-bottom: -2px;
+  border-bottom: 2px solid #555555;
+}
+
+.topNav li.active a {
+  color: #555555;
 }

@@ -3,7 +3,7 @@ const config = {
   development: {
     blogName: "Ethan's blog",
     url: 'http://wuyanxin.com',
-    logo: 'https://www.gravatasr.com/avatar/0531873f81c71a5a9ee9e3071a4ffa87?s=250&d=mm&r=x',
+    logo: 'https://www.gravatar.com/avatar/0531873f81c71a5a9ee9e3071a4ffa87?s=250&d=mm&r=x',
 
     author: {
       name: '吴彦欣',
