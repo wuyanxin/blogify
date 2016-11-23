@@ -2,10 +2,16 @@ var React = require('react');
 
 var PostItem = React.createClass({
   render: function() {
+    let imgStyle = {
+      backgroundImage: `url(${this.props.data.image})`,
+    };
     return (
-      <li>
-        <h2>{this.props.data.title}</h2>
-        <img src={this.props.data.image} width="300px" />
+      <li className="postItem">
+        <div>
+          <h2>{this.props.data.title}</h2>
+          <span>{this.props.data.createdAt.toString()}</span>
+        </div>
+        <div style={imgStyle} className="postImage"></div>
       </li>
     );
   }
@@ -14,7 +20,7 @@ var PostItem = React.createClass({
 var PostList = React.createClass({
   render: function() {
     return (
-      <ul>
+      <ul className="postList">
         {this.props.posts.map(function(post, index) {
            return <PostItem data={post} key={index}/>;
         })}

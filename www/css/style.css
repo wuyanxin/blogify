@@ -117,3 +117,9 @@ button, input, select, textarea {
 .topNav li.active a {
   color: #555555;
 }
+
+.postList .postImage {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+}
