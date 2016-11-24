@@ -7,7 +7,7 @@ var PostItem = React.createClass({
     };
     return (
       <li className="postItem">
-        <div>
+        <div className="postInfo">
           <h2>{this.props.data.title}</h2>
           <span>{this.props.data.createdAt.toString()}</span>
         </div>
