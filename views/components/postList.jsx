@@ -1,15 +1,17 @@
 var React = require('react');
+var moment = require('moment');
 
 var PostItem = React.createClass({
   render: function() {
     let imgStyle = {
       backgroundImage: `url(${this.props.data.image})`,
     };
+    let createdAt = moment(this.props.data.createdAt).format('YYYY-MM-DD');
     return (
       <li className="postItem">
         <div className="postInfo">
           <h2>{this.props.data.title}</h2>
-          <span>{this.props.data.createdAt.toString()}</span>
+          <span>发表于 {createdAt}</span>
         </div>
         <div style={imgStyle} className="postImage"></div>
       </li>
