@@ -89,6 +89,21 @@ button, input, select, textarea {
   line-height: 40px;
 }
 
+.sidebar .footer {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #AAA;
+}
+
+/**************** main ******************/
+
+.main {
+  position: relative;
+}
+
 /*头部导航栏*/
 .topNav {
   border-bottom: 2px solid #d9d9d9;
