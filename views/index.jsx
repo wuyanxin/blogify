@@ -15,7 +15,7 @@ var Homepage = React.createClass({
         </div>
 
         <div className="main col-md-7 col-md-offset-3">
-          <TopNav data={this.props.config.topNav} />
+          <TopNav data={this.props.config.topNav} category={this.props.category} />
           <PostList posts={this.props.posts} />
         </div>
       </DefaultLayout>

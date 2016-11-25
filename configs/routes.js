@@ -1,15 +1,17 @@
 
 module.exports = [
-  { 
-    method: 'get', 
-    pattern: '/', 
+  {
+    method: 'get',
+    pattern: '/',
     controller: 'PageController',
     action: 'index',
     middlewares: []
   },
-  { 
-    method: 'get', 
-    pattern: '/posts', 
+
+  // post
+  {
+    method: 'get',
+    pattern: '/posts',
     controller: 'PostController',
     action: 'getList',
     middlewares: []
@@ -24,5 +26,12 @@ module.exports = [
     pattern: '/post',
     controller: 'PostController',
     action: 'create',
-  }
+  },
+
+  // category
+  {
+    pattern: '/category/:category',
+    controller: 'PageController',
+    action: 'category',
+  },
 ];
