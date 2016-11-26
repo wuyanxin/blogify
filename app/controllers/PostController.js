@@ -1,14 +1,31 @@
 
 let PostService = require('../services/PostService');
 
+function* postPage () {
+  let ctx = this;
+  let slug = ctx.params.slug;
+
+  let post = yield Post.findOne({
+    where: { slug },
+  });
+
+  if (!post) {
+    ctx.status = 404;
+    ctx.body = '文章不存在';
+    return;
+  }
+
+  ctx.status = 200;
+  yield ctx.render('page/post', { post });
+}
+
 function* getList() {
   let ctx = this;
-  console.log(this.params);
   yield Post.findAll().then(result => {
     console.log('result', result);
     ctx.body = {
       code: 200,
-      data: result,  
+      data: result,
     };
     ctx.status = 200;
   });
@@ -16,19 +33,17 @@ function* getList() {
 
 function* getPost() {
   let ctx = this;
-  console.log(this.params);
   yield Post.findById(this.params.id).then(result => {
     console.log('result', result);
     ctx.body = {
       code: 200,
-      data: result,  
+      data: result,
     };
     ctx.status = 200;
   });
 }
 
 function* create() {
-  console.log(this.request.body);
   let ctx = this;
   this.body = this.request.body;
   yield PostService.create(this.body).then(created => {
@@ -42,5 +57,6 @@ function* create() {
 module.exports = {
   getList,
   getPost,
-  create
+  create,
+  postPage,
 }

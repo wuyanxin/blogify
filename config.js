@@ -16,7 +16,7 @@ const config = {
     },
 
     topNav: [
-      { type: 'filter', category: 'tech', title: '技术', url: '/category/tech' },
+      { type: 'filter', category: 'tech', title: '技术', url: '/' },
       { type: 'filter', category: 'live', title: '生活', url: '/category/live' },
       { type: 'page', title: 'Blogify', url: 'https://github.com/wuyanxin/blogify' },
     ],

@@ -34,4 +34,11 @@ module.exports = [
     controller: 'PageController',
     action: 'category',
   },
+
+  // post page
+  {
+    pattern: '/:slug/',
+    controller: 'PostController',
+    action: 'postPage',
+  },
 ];

@@ -10,7 +10,9 @@ var PostItem = React.createClass({
     return (
       <li className="postItem">
         <div className="postInfo">
-          <h2>{this.props.data.title}</h2>
+          <a href={'/' + this.props.data.slug}>
+            <h2>{this.props.data.title}</h2>
+          </a>
           <span>发表于 {createdAt}</span>
         </div>
         <div style={imgStyle} className="postImage"></div>
