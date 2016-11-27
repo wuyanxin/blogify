@@ -1,6 +1,6 @@
 /*
- * @Author: wuyanxin 
- * @Date: 2016-11-11 22:13:16 
+ * @Author: wuyanxin
+ * @Date: 2016-11-11 22:13:16
  * @Last Modified by: wuyanxin
  * @Last Modified time: 2016-11-17 22:53:19
  */
@@ -15,7 +15,7 @@ let app = koa();
 global.AppConfig = require('./config.js');
 
 // render(app, {
-//   root: path.join(__dirname, './app/views'),
+//   root: path.join(__dirname, './src/views'),
 //   layout: 'default',
 //   viewExt: 'html',
 //   cache: app.env === 'production',
@@ -29,10 +29,10 @@ require('koa-react-views')(app, {
 });
 
 // load orm TODO
-require('./app/core/ormLoader')(app);
+require('./src/core/ormLoader')(app);
 console.log('after')
 
-// load service TODO 
+// load service TODO
 
 // load middlewares TODO
 
@@ -53,7 +53,7 @@ app.use(function* (next){
 });
 
 // bind routes TODO
-require('./app/core/routerBinder')(app);
+require('./src/core/routerBinder')(app);
 console.log('router binded');
 
 // bind statics
