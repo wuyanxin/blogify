@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <postList></postList>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import PostList from './components/PostList';
 
 export default {
   name: 'app',
   components: {
-    Hello,
+    PostList,
   },
 };
 </script>
