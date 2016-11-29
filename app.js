@@ -36,6 +36,14 @@ console.log('after')
 
 // load middlewares TODO
 
+if (app.env === 'development') {
+  app.use(function* (next) {
+    this.set('Access-Control-Allow-Credentials', true);
+    this.set('Access-Control-Allow-Origin', '*');
+    yield next;
+  });
+}
+
 // x-response-time
 app.use(function* (next){
   var start = new Date;
