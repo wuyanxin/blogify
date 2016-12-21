@@ -4334,10 +4334,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-async-data:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vue-async-data/-/vue-async-data-1.0.2.tgz#ae0a6930f6e0bf959f12f03d161f5c375f2b0519"
-
 vue-hot-reload-api@^2.0.1:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.6.tgz#817d4bfb30f55428aa1012d029499e07f3147d21"
@@ -4358,6 +4354,10 @@ vue-loader@^10.0.0:
     vue-hot-reload-api "^2.0.1"
     vue-style-loader "^1.0.0"
     vue-template-es2015-compiler "^1.2.2"
+
+vue-router:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.1.0.tgz#c04d5ed79517571d4d668e00a85c8ea0d92c4f87"
 
 vue-style-loader@^1.0.0:
   version "1.0.0"

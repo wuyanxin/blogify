@@ -12,6 +12,8 @@
       </li>
     </ul>
   </div>
+
+  <!-- <router-view></router-view> -->
 </template>
 
 <script>
@@ -50,6 +52,8 @@ export default {
   margin: 30px 0 0;
   width: 400px;
   text-align: left;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
 }
 
 .postList .postItem {
