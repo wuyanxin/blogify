@@ -2,8 +2,9 @@
   <div class="postList">
     <ul>
       <li v-for="post in posts" class="postItem">
+        <a href="#" class="linkEditPost"></a>
         <div class="postInfo">
-          <a href="#">
+          <a :href="post.link" class="linkPreview">
             <h2>{{ post.title }}</h2>
           </a>
           <span>发表于 {{ post.createdAt | dateformat }}</span>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+import Config from '../../../config';
 
 export default {
   name: 'postList',
@@ -32,10 +34,13 @@ export default {
   methods: {
     fetchData() {
       const self = this;
-      fetch('http://localhost:3000/posts')
+      fetch(`${Config.host}/posts`)
         .then(res => res.json())
         .then((result) => {
           self.posts = result.data;
+          for (const post of self.posts) {
+            post.link = `${Config.host}/${post.slug}`;
+          }
         });
     },
   },
@@ -65,6 +70,18 @@ export default {
   border-bottom: 1px dashed #d9d9d9;
   box-sizing: border-box;
   word-wrap: break-word;
+}
+
+.postList .postItem .linkEditPost {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.postList .postItem .linkPreview {
+  position: absolute;
+  z-index: 2;
 }
 
 .postList .postItem .postInfo {
