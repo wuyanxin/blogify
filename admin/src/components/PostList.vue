@@ -2,10 +2,12 @@
   <div class="postList">
     <ul>
       <li v-for="post in posts" class="postItem">
-        <a href="#" class="linkEditPost"></a>
         <div class="postInfo">
-          <a :href="post.link" class="linkPreview">
+          <a href="#" class="linkEditPost">
             <h2>{{ post.title }}</h2>
+          </a>
+          <a :href="post.link" class="linkPreview btn">
+            预览
           </a>
           <span>发表于 {{ post.createdAt | dateformat }}</span>
         </div>
@@ -73,14 +75,12 @@ export default {
 }
 
 .postList .postItem .linkEditPost {
-  position: absolute;
   width: 100%;
   height: 100%;
   z-index: 1;
 }
 
 .postList .postItem .linkPreview {
-  position: absolute;
   z-index: 2;
 }
 
