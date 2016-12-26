@@ -4,6 +4,7 @@ import moment from 'moment';
 import App from './App';
 import Post from './components/Post';
 
+Vue.use(VueRouter);
 Vue.filter('dateformat', date => moment(date).format('YYYY-MM-DD'));
 
 const router = new VueRouter({

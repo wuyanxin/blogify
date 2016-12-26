@@ -1,22 +1,27 @@
 <template>
-  <div class="postList">
-    <ul>
-      <li v-for="post in posts" class="postItem">
-        <div class="postInfo">
-          <a href="#" class="linkEditPost">
-            <h2>{{ post.title }}</h2>
-          </a>
-          <a :href="post.link" class="linkPreview btn">
-            预览
-          </a>
-          <span>发表于 {{ post.createdAt | dateformat }}</span>
-        </div>
-        <div class="postImage" :style="{ backgroundImage: 'url(' + post.image + ')' }"></div>
-      </li>
-    </ul>
+  <div>
+    <div class="postList">
+      <ul>
+        <li v-for="post in posts" class="postItem">
+          <div class="postInfo">
+            <router-link to="/post/1" class="linkEditPost">
+              <h2>{{ post.title }}</h2>
+            </router-link>
+            <a :href="post.link" class="linkPreview btn">
+              预览
+            </a>
+            <span>发表于 {{ post.createdAt | dateformat }}</span>
+          </div>
+          <div class="postImage" :style="{ backgroundImage: 'url(' + post.image + ')' }"></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="postMain">
+      <router-view></router-view>
+    </div>
   </div>
 
-  <!-- <router-view></router-view> -->
 </template>
 
 <script>
