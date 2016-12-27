@@ -4,7 +4,7 @@
       <ul>
         <li v-for="post in posts" class="postItem">
           <div class="postInfo">
-            <router-link to="/post/1" class="linkEditPost">
+            <router-link :to="{ path: '/post/' + post.id }" class="linkEditPost">
               <h2>{{ post.title }}</h2>
             </router-link>
             <a :href="post.link" class="linkPreview btn">
@@ -61,11 +61,11 @@ export default {
 }
 
 .postList {
-  margin: 30px 0 0;
   width: 400px;
   text-align: left;
   padding-right: 20px;
   border-right: 1px solid #ccc;
+  float: left;
 }
 
 .postList .postItem {
@@ -105,5 +105,9 @@ export default {
   border-radius: 4px;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
+}
+
+.postMain {
+  padding-left: 450px;
 }
 </style>
