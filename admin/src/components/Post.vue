@@ -8,16 +8,16 @@
       {{ error }}
     </div>
 
-    <div v-if="post" class="content">
-      <h2>{{ post.title }}</h2>
-      <h3>id: {{ post.id }}</h3>
-      <p>{{ post.body }}</p>
+    <div v-if="post" class="postDetail">
+      <h1 class="postTitle">{{ post.title }}</h1>
+      <hr>
+      <div v-html="post.content" class="postContent"></div>
     </div>
   </div>
 </template>
 
 <script>
-// import Config from '../../../config';
+import Config from '../../../config';
 
 export default {
   data() {
@@ -39,17 +39,15 @@ export default {
   methods: {
     fetchData() {
       const self = this;
-      this.error = this.post = null;
-      this.loading = true;
+      self.error = self.post = null;
+      self.loading = true;
 
-      setTimeout(() => {
-        self.loading = false;
-        self.post = {
-          id: self.$route.params.id,
-          title: 'title',
-          body: 'body',
-        };
-      }, 1000);
+      fetch(`${Config.host}/post/${self.$route.params.id}`)
+        .then(res => res.json())
+        .then((result) => {
+          self.loading = false;
+          self.post = result.data;
+        });
     },
   },
 };
