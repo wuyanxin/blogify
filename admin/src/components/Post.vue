@@ -9,7 +9,7 @@
     </div>
 
     <div v-if="post" class="postDetail">
-      <h1 class="postTitle">{{ post.title }}</h1>
+      <h2 class="postTitle">{{ post.title }}</h2>
       <hr>
       <div v-html="post.content" class="postContent"></div>
     </div>

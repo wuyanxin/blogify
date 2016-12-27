@@ -1,22 +1,11 @@
 import Vue from 'vue';
-import Router from 'vue-router';
-import PostList from '../components/PostList';
+import VueRouter from 'vue-router';
+import Post from '../components/Post';
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
-export default new Router({
-  mode: 'hash', // Demo is living in GitHub.io, so required!
-  linkActiveClass: 'is-active',
-  scrollBehavior: () => ({ y: 0 }),
+export default new VueRouter({
   routes: [
-    {
-      name: 'Post',
-      path: '/post',
-      component: PostList,
-    },
-    {
-      path: '*',
-      redirect: '/',
-    },
+    { path: '/post/:id', component: Post },
   ],
 });
