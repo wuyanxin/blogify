@@ -9,9 +9,10 @@
     </div>
 
     <div v-if="post" class="postDetail">
-      <h2 class="postTitle">{{ post.title }}</h2>
+      <label for="postTitle">标题:</label>
+      <input id="postTitle" type="text" name="title" :value="post.title">
       <hr>
-      <div v-html="post.content" class="postContent"></div>
+      <textarea name="md" id="postMd">{{ post.md }}</textarea>
     </div>
   </div>
 </template>
@@ -55,5 +56,20 @@ export default {
 </script>
 
 <style>
+.post {
+  height: 100%;
+}
+.postDetail {
+  text-align: left;
+  height: 90%;
+}
 
+#postTitle {
+  width: 90%;
+  font-size: 1.5em;
+}
+#postMd {
+  width: 94.3%;
+  height: 93%;
+}
 </style>

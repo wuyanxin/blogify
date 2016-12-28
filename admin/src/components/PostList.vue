@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="postListContainer">
     <div class="postList">
       <ul>
         <li v-for="post in posts" class="postItem">
@@ -56,6 +56,11 @@ export default {
 </script>
 
 <style>
+.postListContainer {
+  width: 100%;
+  height: 100%;
+}
+
 .postList ul {
   list-style: none;
 }
@@ -109,5 +114,6 @@ export default {
 
 .postMain {
   padding-left: 450px;
+  height: 100%;
 }
 </style>
