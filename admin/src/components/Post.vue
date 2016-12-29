@@ -10,9 +10,10 @@
 
     <div v-if="post" class="postDetail">
       <label for="postTitle">标题:</label>
-      <input id="postTitle" type="text" name="title" :value="post.title">
+      <input id="postTitle" type="text" name="title" v-model="post.title">
       <hr>
-      <textarea name="md" id="postMd">{{ post.md }}</textarea>
+      <textarea name="md" id="postMd" v-model="post.md"></textarea>
+      <button type="button" name="btnPostSave" id="btnPostSave" v-on:click="savePost">保存</button>
     </div>
   </div>
 </template>
@@ -50,6 +51,10 @@ export default {
           self.post = result.data;
         });
     },
+
+    savePost() {
+      console.log(JSON.stringify(this.post));
+    },
   },
 };
 
@@ -70,6 +75,9 @@ export default {
 }
 #postMd {
   width: 94.3%;
-  height: 93%;
+  height: 88%;
+}
+#btnPostSave {
+  display: block;
 }
 </style>
