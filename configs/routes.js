@@ -27,6 +27,12 @@ module.exports = [
     controller: 'PostController',
     action: 'create',
   },
+  {
+    method: 'put',
+    pattern: '/post',
+    controller: 'PostController',
+    action: 'update',
+  },
 
   // category
   {

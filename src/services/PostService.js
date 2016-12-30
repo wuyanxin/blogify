@@ -24,6 +24,13 @@ function create(post) {
   return Post.create(post);
 }
 
+function update(post) {
+  return Post.update(post, {
+    where: { id: post.id },
+  });
+}
+
 module.exports = {
   create,
+  update,
 }

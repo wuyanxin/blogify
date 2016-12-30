@@ -54,9 +54,21 @@ function* create() {
   });
 }
 
+function* update() {
+  let ctx = this;
+  let body = this.request.body;
+  yield PostService.update(body).then(updated => {
+    ctx.body = {
+      code: 200,
+      data: updated,
+    };
+  });
+}
+
 module.exports = {
   getList,
   getPost,
   create,
   postPage,
+  update,
 }
