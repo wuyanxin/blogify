@@ -1,7 +1,10 @@
 <template>
   <div class="post">
     <div class="loading" v-if="loading">
-      Loading...
+      加载中...
+    </div>
+    <div class="loading" v-if="committing">
+      保存中...
     </div>
 
     <div v-if="error" class="error">
@@ -53,7 +56,20 @@ export default {
     },
 
     savePost() {
-      console.log(JSON.stringify(this.post));
+      const self = this;
+      const headers = new Headers({
+        'Content-Type': 'application/json',
+      });
+      self.committing = true;
+
+      fetch(`${Config.host}/post`, {
+        method: 'PUT',
+        body: JSON.stringify(this.post),
+        headers,
+      }).then(res => res.json())
+        .then(() => {
+          self.committing = false;
+        });
     },
   },
 };

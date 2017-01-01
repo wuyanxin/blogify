@@ -30,5 +30,6 @@ module.exports = {
   'globals': {
     'console': true,
     'fetch': true,
+    'Headers': true,
   }
 }

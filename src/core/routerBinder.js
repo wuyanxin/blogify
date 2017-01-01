@@ -28,6 +28,21 @@ module.exports = function (app) {
     router[method](route.pattern, action);
   });
 
+  // allow cors on development
+  if (app.env === 'development') {
+    app.use(function* (next) {
+      this.set('Access-Control-Allow-Credentials', true);
+      this.set('Access-Control-Allow-Origin', '*');
+      this.set('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
+      this.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+      yield next;
+    });
+    
+    router.options('*', function* () {
+      this.status = 204;
+    });
+  }
+
   app.use(router.routes());
 
 };
