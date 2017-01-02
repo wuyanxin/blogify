@@ -31,5 +31,6 @@ module.exports = {
     'console': true,
     'fetch': true,
     'Headers': true,
+    'location': true,
   }
 }

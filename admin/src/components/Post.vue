@@ -28,6 +28,7 @@ export default {
   data() {
     return {
       loading: false,
+      committing: false,
       post: null,
       error: null,
     };
@@ -69,6 +70,7 @@ export default {
       }).then(res => res.json())
         .then(() => {
           self.committing = false;
+          location.reload();
         });
     },
   },
