@@ -25,6 +25,7 @@ function create(post) {
 }
 
 function update(post) {
+  post.content = parseMarkdown(post.md);
   return Post.update(post, {
     where: { id: post.id },
   });
