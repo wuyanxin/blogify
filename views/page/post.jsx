@@ -1,7 +1,7 @@
 
 var React = require('react');
 var moment = require('moment');
-var DefaultLayout = require('../layouts/default');
+var PostLayout = require('../layouts/post');
 
 var PostPage = React.createClass({
   render: function () {
@@ -10,7 +10,7 @@ var PostPage = React.createClass({
     let content = { __html: post.content };
 
     return (
-      <DefaultLayout title={post.title} >
+      <PostLayout title={post.title} >
         <main className="postMain col-md-6 col-md-offset-3">
           <article>
             <header>
@@ -27,7 +27,7 @@ var PostPage = React.createClass({
             </footer>
           </article>
         </main>
-      </DefaultLayout>
+      </PostLayout>
     );
   },
 });
