@@ -6,7 +6,7 @@ var DefaultLayout = React.createClass({
       <html>
         <head>
           <title>Blogify</title>
-
+          <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" />
           <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
           <link rel="stylesheet" type="text/css" href="/css/post.css" />
           <link rel="stylesheet" type="text/css" href="/css/social-icons.css" />

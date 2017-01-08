@@ -14,7 +14,7 @@ var PostPage = React.createClass({
         <main className="postMain col-md-6 col-md-offset-3">
           <article>
             <header>
-              <h1>{post.title}</h1>
+              <h1 className="postTitle">{post.title}</h1>
               <span>发布时间: <time>{createdAt.toString()}</time></span>
             </header>
 

@@ -8,7 +8,9 @@ Author: Brett Terpstra
 Description: Github README style. Includes theme for Pygmentized code blocks.
 */
 html, body {
-  color: black; }
+  color: black;
+  word-wrap: break-word;
+}
 
 *:not('#mkdbuttons') {
   margin: 0;
@@ -56,6 +58,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.5em;
   border-bottom: 1px solid #ddd; }
+
+h1.postTitle {
+  border-bottom: none;
+}
 
 h2 {
   font-size: 2em;
@@ -166,16 +172,11 @@ img {
   max-width: 100%; }
 
 code, tt {
-  margin: 0 2px;
-  padding: 0 5px;
-  white-space: nowrap;
-  border: 1px solid #eaeaea;
-  background-color: #f9f2f4;
-  border-radius: 3px;
-  font-family: Consolas, 'Liberation Mono', Courier, monospace;
-  font-size: 12px;
+  padding: 2px 4px;
+  font-size: 90%;
   color: #c7254e;
-  padding: 2px 4px; }
+  background-color: #f9f2f4;
+  border-radius: 3px; }
 
 pre > code {
   margin: 0;
@@ -204,7 +205,8 @@ pre {
   margin: 26px 0; }
   pre code, pre tt {
     background-color: transparent;
-    border: none; }
+    border: none;
+    font-size: smaller; }
 
 .poetry pre {
   font-family: Georgia, Garamond, serif !important;
