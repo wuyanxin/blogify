@@ -5,14 +5,14 @@
         <li v-for="post in posts" class="postItem">
           <div class="postInfo">
             <router-link :to="{ path: '/post/' + post.id }" class="linkEditPost">
-              <h2>{{ post.title }}</h2>
+              <h3>{{ post.title }}</h3>
             </router-link>
             <a :href="post.link" class="linkPreview btn">
               预览
             </a>
             <span>发表于 {{ post.createdAt | dateformat }}</span>
           </div>
-          <div class="postImage" :style="{ backgroundImage: 'url(' + post.image + ')' }"></div>
+          <!-- <div class="postImage" :style="{ backgroundImage: 'url(' + post.image + ')' }"></div> -->
         </li>
       </ul>
     </div>
@@ -102,7 +102,8 @@ export default {
 .postList .postItem .postImage {
   display: inline-block;
   background-position: center;
-  float: right;
+  right: 0;
+  position: absolute;
 
   width: 100px;
   height: 100px;
