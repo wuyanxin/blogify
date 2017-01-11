@@ -1,6 +1,9 @@
 <template>
   <div class="postListContainer">
     <div class="postList">
+      <router-link to="/post/new">
+        <button class="btn-new-post">新建文章</button>
+      </router-link>
       <ul>
         <li v-for="post in posts" class="postItem">
           <div class="postInfo">
@@ -116,5 +119,9 @@ export default {
 .postMain {
   padding-left: 450px;
   height: 100%;
+}
+
+.btn-new-post {
+  float: right;
 }
 </style>

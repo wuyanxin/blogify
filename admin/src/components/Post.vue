@@ -17,6 +17,11 @@
       <hr>
       <textarea name="md" id="postMd" v-model="post.md"></textarea>
       <button type="button" name="btnPostSave" id="btnPostSave" v-on:click="savePost">保存</button>
+      <div class="message" v-if="message">
+        {{ message }}
+        <a href="/" v-if="isNew">刷新</a>
+        <a href="javascript:location.reload()" v-else>刷新</a>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +36,7 @@ export default {
       committing: false,
       post: null,
       error: null,
+      message: null,
     };
   },
   created() {
@@ -47,6 +53,13 @@ export default {
       const self = this;
       self.error = self.post = null;
       self.loading = true;
+      self.isNew = this.$route.params.id === 'new';
+
+      if (self.isNew) {
+        self.loading = false;
+        self.post = {};
+        return;
+      }
 
       fetch(`${Config.host}/post/${self.$route.params.id}`)
         .then(res => res.json())
@@ -61,16 +74,21 @@ export default {
       const headers = new Headers({
         'Content-Type': 'application/json',
       });
+      const method = self.isNew ? 'POST' : 'PUT';
       self.committing = true;
 
       fetch(`${Config.host}/post`, {
-        method: 'PUT',
+        method,
         body: JSON.stringify(this.post),
         headers,
       }).then(res => res.json())
         .then(() => {
           self.committing = false;
-          location.reload();
+          if (self.isNew) {
+            self.message = '新增成功';
+          } else {
+            self.message = '更新成功';
+          }
         });
     },
   },
