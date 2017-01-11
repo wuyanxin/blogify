@@ -21,8 +21,7 @@ function* postPage () {
 
 function* getList() {
   let ctx = this;
-  yield Post.findAll().then(result => {
-    console.log('result', result);
+  yield Post.findAll({ order: 'id desc' }).then(result => {
     ctx.body = {
       code: 200,
       data: result,
@@ -34,7 +33,6 @@ function* getList() {
 function* getPost() {
   let ctx = this;
   yield Post.findById(this.params.id).then(result => {
-    console.log('result', result);
     ctx.body = {
       code: 200,
       data: result,
