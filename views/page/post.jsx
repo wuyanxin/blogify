@@ -2,6 +2,7 @@
 var React = require('react');
 var moment = require('moment');
 var PostLayout = require('../layouts/post');
+let scripts = require('./../../configs/scripts');
 
 var PostPage = React.createClass({
   render: function () {
@@ -25,8 +26,16 @@ var PostPage = React.createClass({
             <footer>
 
             </footer>
+            
+            <div className="ds-thread" data-thread-key={post.slug}
+              data-title={post.title}></div>
           </article>
         </main>
+
+
+        <div className="inserted-scripts"
+          dangerouslySetInnerHTML={{ __html: scripts.afterPost }}>
+        </div>
       </PostLayout>
     );
   },
