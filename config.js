@@ -16,6 +16,11 @@ const config = {
       ]
     },
 
+    categories: [
+      { value: 'tech', name: '技术' },
+      { value: 'live', name: '生活' },
+    ],
+
     topNav: [
       { type: 'filter', category: 'tech', title: '技术', url: '/' },
       { type: 'filter', category: 'live', title: '生活', url: '/category/live' },

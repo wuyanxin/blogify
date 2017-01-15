@@ -12,8 +12,30 @@
     </div>
 
     <div v-if="post" class="postDetail">
-      <label for="postTitle">标题:</label>
-      <input id="postTitle" type="text" name="title" v-model="post.title">
+      <div class="postField">
+        <label for="postTitle">标题:</label>
+        <input id="postTitle" type="text" name="title" v-model="post.title">
+      </div>
+
+      <div class="postField">
+        <label for="type-selector">类型:</label>
+        <select id="type-selector" class="type-selector"
+          name="type" v-model="post.type" required="true">
+          <option value ="post">文章</option>
+          <option value ="page">页面</option>
+        </select>
+      </div>
+
+      <div class="postField">
+        <label for="category-selector">类别:</label>
+        <select id="category-selector" class="category-selector"
+          name="category" v-model="post.category">
+          <option v-for="item in categories" :value="item.value">
+            {{ item.name }}
+          </option>
+        </select>
+      </div>
+
       <hr>
       <textarea name="md" id="postMd" v-model="post.md"></textarea>
       <button type="button" name="btnPostSave" id="btnPostSave" v-on:click="savePost">保存</button>
@@ -37,6 +59,7 @@ export default {
       post: null,
       error: null,
       message: null,
+      categories: Config.categories,
     };
   },
   created() {
@@ -51,7 +74,7 @@ export default {
   methods: {
     fetchData() {
       const self = this;
-      self.error = self.post = null;
+      self.message = self.error = self.post = null;
       self.loading = true;
       self.isNew = this.$route.params.id === 'new';
 
