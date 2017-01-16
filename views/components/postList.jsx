@@ -1,11 +1,22 @@
 var React = require('react');
 var moment = require('moment');
 
+var PostImage = React.createClass({
+  render: function () {
+    let image = this.props.image;
+    if (image) {
+      let imgStyle = {
+        backgroundImage: `url(${image})`,
+      };
+      return <div style={imgStyle} className="postImage"></div>;
+    } else {
+      return null;
+    }
+  },
+});
+
 var PostItem = React.createClass({
   render: function() {
-    let imgStyle = {
-      backgroundImage: `url(${this.props.data.image})`,
-    };
     let createdAt = moment(this.props.data.createdAt).format('YYYY-MM-DD');
     return (
       <li className="postItem">
@@ -15,7 +26,8 @@ var PostItem = React.createClass({
           </a>
           <span>发表于 {createdAt}</span>
         </div>
-        <div style={imgStyle} className="postImage"></div>
+
+        <PostImage image={this.props.data.image} />
       </li>
     );
   }
