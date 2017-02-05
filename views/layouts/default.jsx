@@ -10,7 +10,6 @@ var DefaultLayout = React.createClass({
           <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
           <link rel="stylesheet" type="text/css" href="/css/style.css" />
           <link rel="stylesheet" type="text/css" href="/css/social-icons.css" />
-          <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
         </head>
         <body>

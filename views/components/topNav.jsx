@@ -7,24 +7,25 @@ var React = require('react');
 var TopNav = React.createClass({
   render: function () {
     let self = this;
-    let topNav = this.props.data;
+    let categories = this.props.data;
 
-    if (!topNav || !Array.isArray(topNav)) {
+    if (!categories || !Array.isArray(categories)) {
       return;
     }
 
     return (
       <ul className="topNav">
-        {topNav.map(function(item, index) {
-          let activeClass = item.category === self.props.category ? 'active' : '';
+        {categories.map(function(item, index) {
+          let activeClass = item.value === self.props.category ? 'active' : '';
           return (
             <li key={index} className={activeClass}>
-              <a href={item.url} target={item.target === 'page' ? '_blank' : '_self'}>
-                {item.title}
+              <a href={item.url} target="_self">
+                {item.name}
               </a>
             </li>
           );
         })}
+        <li><a href="https://github.com/wuyanxin/blogify" target="_blank">Blogify</a></li>
       </ul>
     )
   }

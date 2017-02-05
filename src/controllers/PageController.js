@@ -1,7 +1,7 @@
 
 // get the default category from APPConfig
-let defaultNav = AppConfig.topNav && AppConfig.topNav[0] || {};
-const defaultCategory = defaultNav.category || '';
+const defaultNav = AppConfig.categories && AppConfig.categories[0] || {};
+const defaultCategory = defaultNav.value || '';
 
 function* index() {
   let query = { where: {} };

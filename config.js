@@ -17,15 +17,15 @@ const config = {
     },
 
     categories: [
-      { value: 'tech', name: '技术' },
-      { value: 'live', name: '生活' },
+      { value: 'tech', name: '技术', url: '/' },
+      { value: 'live', name: '生活', url: '/category/live' },
     ],
 
-    topNav: [
-      { type: 'filter', category: 'tech', title: '技术', url: '/' },
-      { type: 'filter', category: 'live', title: '生活', url: '/category/live' },
-      { type: 'page', title: 'Blogify', url: 'https://github.com/wuyanxin/blogify' },
-    ],
+    // topNav: [
+    //   { type: 'filter', category: 'tech', title: '技术', url: '/' },
+    //   { type: 'filter', category: 'live', title: '生活', url: '/category/live' },
+    //   { type: 'page', title: 'Blogify', url: 'https://github.com/wuyanxin/blogify' },
+    // ],
 
     leftNav: [
       { title: '归档', logo: '', url: '' },

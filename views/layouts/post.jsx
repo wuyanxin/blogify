@@ -10,7 +10,6 @@ let DefaultLayout = React.createClass({
           <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
           <link rel="stylesheet" type="text/css" href="/css/post.css" />
           <link rel="stylesheet" type="text/css" href="/css/social-icons.css" />
-          <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
           <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/highlight.js/9.9.0/styles/atom-one-light.min.css" />
 
         </head>
