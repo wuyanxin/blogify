@@ -2,7 +2,7 @@
 const config = {
   development: {
     blogName: "Ethan's blog",
-    url: 'http://wuyanxin.com',
+    // url: 'http://wuyanxin.com',
     host: 'http://localhost:3000',
     logo: 'https://www.gravatar.com/avatar/0531873f81c71a5a9ee9e3071a4ffa87?s=250&d=mm&r=x',
 
@@ -20,12 +20,6 @@ const config = {
       { value: 'tech', name: '技术', url: '/' },
       { value: 'live', name: '生活', url: '/category/live' },
     ],
-
-    // topNav: [
-    //   { type: 'filter', category: 'tech', title: '技术', url: '/' },
-    //   { type: 'filter', category: 'live', title: '生活', url: '/category/live' },
-    //   { type: 'page', title: 'Blogify', url: 'https://github.com/wuyanxin/blogify' },
-    // ],
 
     leftNav: [
       { title: '归档', logo: '', url: '' },

@@ -18,6 +18,11 @@
       </div>
 
       <div class="postField">
+        <label for="postSlug">Slug:</label>
+        <input id="postSlug" type="text" name="slug" v-model="post.slug">
+      </div>
+
+      <div class="postField">
         <label for="type-selector">类型:</label>
         <select id="type-selector" class="type-selector"
           name="type" v-model="post.type" required="true">
