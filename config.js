@@ -23,7 +23,7 @@ const config = {
 
     leftNav: [
       { title: '归档', logo: '', url: '' },
-      { title: '友链', logo: '', url: '' },
+      { title: '友链', logo: '', url: '/link' },
       { title: '关于', logo: '', url: '' },
     ],
 

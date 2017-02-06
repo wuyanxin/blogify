@@ -165,3 +165,7 @@ button, input, select, textarea {
   border: 1px solid #eeeeee;
   box-sizing: border-box;
 }
+
+.pageContent {
+  margin: 40px 20px 60px;
+}

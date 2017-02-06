@@ -16,6 +16,9 @@ function* postPage () {
   }
 
   ctx.status = 200;
+  if (post.type === 'page') {
+    return yield ctx.render('page/customPage', { post });
+  }
   yield ctx.render('page/post', { post });
 }
 
