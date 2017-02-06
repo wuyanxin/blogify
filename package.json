@@ -35,6 +35,7 @@
     "koa-restql": "^1.0.8",
     "koa-router": "^5.4.0",
     "koa-static": "^2.0.0",
+    "limax": "^1.4.1",
     "lodash": "^4.16.6",
     "marked": "^0.3.6",
     "moment": "^2.17.0",

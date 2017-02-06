@@ -1,5 +1,6 @@
-let xss = require('xss');
-let marked = require('marked');
+const xss = require('xss');
+const marked = require('marked');
+const slug = require('limax');
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -21,11 +22,13 @@ function parseMarkdown(md) {
 
 function create(post) {
   post.content = parseMarkdown(post.md);
+  post.slug = post.slug || slug(post.title, { tone: false });
   return Post.create(post);
 }
 
 function update(post) {
   post.content = parseMarkdown(post.md);
+  post.slug = post.slug || slug(post.title, { tone: false });
   return Post.update(post, {
     where: { id: post.id },
   });
