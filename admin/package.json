@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "limax": "^1.4.1",
     "lodash": "^4.17.2",
     "moment": "^2.17.0",
     "vue": "^2.1.0",

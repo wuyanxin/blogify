@@ -14,12 +14,13 @@
     <div v-if="post" class="postDetail">
       <div class="postField">
         <label for="postTitle">标题:</label>
-        <input id="postTitle" type="text" name="title" v-model="post.title">
+        <input id="postTitle" type="text" name="title" v-model="post.title"
+          @keyup="onTitleChange" @change="onTitleChange">
       </div>
 
       <div class="postField">
         <label for="postSlug">Slug:</label>
-        <input id="postSlug" type="text" name="slug" v-model="post.slug">
+        <input id="postSlug" type="text" name="slug" v-model="post.slug" :placeholder="slug_holder">
       </div>
 
       <div class="postField">
@@ -54,6 +55,7 @@
 </template>
 
 <script>
+import slug from 'limax';
 import Config from '../../../config';
 
 export default {
@@ -65,6 +67,7 @@ export default {
       error: null,
       message: null,
       categories: Config.categories,
+      slug_holder: '',
     };
   },
   created() {
@@ -119,6 +122,14 @@ export default {
           }
         });
     },
+
+    onTitleChange() {
+      if (!this.post || !this.post.title) {
+        this.slug_holder = '';
+        return;
+      }
+      this.slug_holder = slug(this.post.title, { tone: false });
+    },
   },
 };
 
@@ -136,6 +147,9 @@ export default {
 #postTitle {
   width: 90%;
   font-size: 1.5em;
+}
+#postSlug {
+  width: 90%;
 }
 #postMd {
   width: 94.3%;
