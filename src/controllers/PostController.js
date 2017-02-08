@@ -1,5 +1,7 @@
 
-let PostService = require('../services/PostService');
+const _ = require('lodash');
+const moment = require('moment');
+const PostService = require('../services/PostService');
 
 /**
  * 文章详情页
@@ -81,10 +83,31 @@ function* update() {
   });
 }
 
+/**
+ * 返回文章创建年月，用于文章归档分组
+ */
+function _groupByMonth(post) {
+  return moment(post.createdAt).format('YYYY年MM月');
+}
+
+/**
+ * 获取归档文章
+ */
+function* getArchives() {
+  let ctx = this;
+  let posts = yield Post.findAll({ order: 'id desc' });
+  posts = _.groupBy(posts, _groupByMonth);
+  ctx.body = {
+    code: 200,
+    data: posts,
+  };
+}
+
 module.exports = {
   getList,
   getPost,
   create,
   postPage,
   update,
+  getArchives,
 }

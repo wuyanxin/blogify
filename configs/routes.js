@@ -41,10 +41,18 @@ module.exports = [
     action: 'category',
   },
 
+  // archive
+  {
+    pattern: '/archive',
+    controller: 'PostController',
+    action: 'getArchives',
+  },
+
   // post page
   {
     pattern: '/:slug/',
     controller: 'PostController',
     action: 'postPage',
   },
+  
 ];
