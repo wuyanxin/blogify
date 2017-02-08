@@ -1,6 +1,9 @@
 
 let PostService = require('../services/PostService');
 
+/**
+ * 文章详情页
+ */
 function* postPage () {
   let ctx = this;
   let slug = ctx.params.slug;
@@ -22,6 +25,9 @@ function* postPage () {
   yield ctx.render('page/post', { post });
 }
 
+/**
+ * 全部文章（后台使用）
+ */
 function* getList() {
   let ctx = this;
   yield Post.findAll({ order: 'id desc' }).then(result => {
@@ -33,6 +39,9 @@ function* getList() {
   });
 }
 
+/**
+ * 文章详情 （后台使用）
+ */
 function* getPost() {
   let ctx = this;
   yield Post.findById(this.params.id).then(result => {
@@ -44,6 +53,9 @@ function* getPost() {
   });
 }
 
+/**
+ * 创建文章
+ */
 function* create() {
   let ctx = this;
   this.body = this.request.body;
@@ -55,6 +67,9 @@ function* create() {
   });
 }
 
+/**
+ * 更新文章
+ */
 function* update() {
   let ctx = this;
   let body = this.request.body;

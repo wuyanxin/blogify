@@ -3,6 +3,9 @@
 const defaultNav = AppConfig.categories && AppConfig.categories[0] || {};
 const defaultCategory = defaultNav.value || '';
 
+/**
+ * 首页
+ */
 function* index() {
   let query = { where: {} };
 
