@@ -43,7 +43,7 @@ module.exports = [
 
   // archive
   {
-    pattern: '/archive',
+    pattern: '/archives',
     controller: 'PostController',
     action: 'getArchives',
   },
@@ -54,5 +54,5 @@ module.exports = [
     controller: 'PostController',
     action: 'postPage',
   },
-  
+
 ];

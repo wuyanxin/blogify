@@ -169,3 +169,21 @@ button, input, select, textarea {
 .pageContent {
   margin: 40px 20px 60px;
 }
+
+.archive-posts {
+  margin: 40px 20px 60px;
+}
+
+.archive-posts ul {
+  list-style: disc;
+}
+
+.archive-posts a {
+  font-size: 18px;
+  line-height: 1.8;
+  word-wrap: break-word;
+}
+.archive-posts small {
+  margin-left: 15px;
+  color: #AAA;
+}

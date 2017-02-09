@@ -97,10 +97,7 @@ function* getArchives() {
   let ctx = this;
   let posts = yield Post.findAll({ order: 'id desc' });
   posts = _.groupBy(posts, _groupByMonth);
-  ctx.body = {
-    code: 200,
-    data: posts,
-  };
+  yield ctx.render('page/archives', { posts });
 }
 
 module.exports = {
