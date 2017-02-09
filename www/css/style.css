@@ -34,11 +34,14 @@ button, input, select, textarea {
 .sidebar {
   position: fixed;
   height: 100%;
-  background: #3D4349;
+  /*background: #3D4349;*/
+  background: #263238;
   top: 0;
   left: 0;
-  color: #CCC;
+  /*color: #CCC;*/
+  color: #FFF;
   font-size: 18px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .sidebar li a {
@@ -46,7 +49,7 @@ button, input, select, textarea {
 }
 
 .sidebar li a:hover {
-  color: #666;
+  color: #FFF;
 }
 
 .sidebar .about-us {
