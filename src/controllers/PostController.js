@@ -95,7 +95,10 @@ function _groupByMonth(post) {
  */
 function* getArchives() {
   let ctx = this;
-  let posts = yield Post.findAll({ order: 'id desc' });
+  let posts = yield Post.findAll({
+    where: { type: 'post' },
+    order: 'id desc'
+  });
   posts = _.groupBy(posts, _groupByMonth);
   yield ctx.render('page/archives', { posts });
 }
