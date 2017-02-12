@@ -22,8 +22,8 @@ const config = {
     ],
 
     leftNav: [
-      { title: '归档', logo: '', url: '/archives' },
-      { title: '友链', logo: '', url: '/link' },
+      { title: '文章归档', logo: '', url: '/archives' },
+      { title: '友情链接', logo: '', url: '/link' },
       { title: '关于', logo: '', url: '' },
     ],
 
