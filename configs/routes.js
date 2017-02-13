@@ -48,6 +48,13 @@ module.exports = [
     action: 'getArchives',
   },
 
+  // admin
+  {
+    pattern: '/admin',
+    controller: 'PageController',
+    action: 'admin',
+  },
+
   // post page
   {
     pattern: '/:slug/',

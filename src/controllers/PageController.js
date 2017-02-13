@@ -1,4 +1,6 @@
 
+const fs = require('fs');
+
 // get the default category from APPConfig
 const defaultNav = AppConfig.categories && AppConfig.categories[0] || {};
 const defaultCategory = defaultNav.value || '';
@@ -46,7 +48,14 @@ function* category() {
 
 }
 
+function* admin() {
+  this.response.status = 200;
+  this.response.type = 'text/html';
+  this.body = fs.createReadStream(`${process.cwd()}/admin/dist/index.html`);
+}
+
 module.exports = {
   index,
   category,
+  admin,
 };
