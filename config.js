@@ -30,21 +30,21 @@ const config = {
     global_before_script: '',
     global_after_script: '',
     post_before_script: '',
-    // post_after_script: `
-    //   <!-- 多说公共JS代码 start -->
-    //   <script type="text/javascript">
-    //     var duoshuoQuery = {short_name:"blog-wuyanxin-hexo"};
-    //   	(function() {
-    //   		var ds = document.createElement('script');
-    //   		ds.type = 'text/javascript';ds.async = true;
-    //   		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    //   		ds.charset = 'UTF-8';
-    //   		(document.getElementsByTagName('head')[0]
-    //   		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-    //   	})();
-    //   </script>
-    //   <!-- 多说公共JS代码 end -->
-    // `,
+    post_after_script: `
+      <!-- 多说公共JS代码 start -->
+      <script type="text/javascript">
+        var duoshuoQuery = {short_name:"blog-wuyanxin-hexo"};
+      	(function() {
+      		var ds = document.createElement('script');
+      		ds.type = 'text/javascript';ds.async = true;
+      		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      		ds.charset = 'UTF-8';
+      		(document.getElementsByTagName('head')[0]
+      		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+      	})();
+      </script>
+      <!-- 多说公共JS代码 end -->
+    `,
   },
 
   production: {

@@ -70,10 +70,12 @@ export default {
 
 .postList {
   width: 400px;
+  height: 100%;
   text-align: left;
   padding-right: 20px;
   border-right: 1px solid #ccc;
   float: left;
+  overflow-y: auto;
 }
 
 .postList .postItem {
