@@ -1,6 +1,6 @@
-let Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
-let Post = {
+const Post = {
   name: 'post',
   attributes: {
     title: Sequelize.STRING,

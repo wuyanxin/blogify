@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-preset-react": "^6.16.0",
     "babel-register": "^6.18.0",
+    "bcrypt": "^1.0.2",
     "bluebird": "^3.4.6",
     "koa": "^1.2.4",
     "koa-body": "^1.6.0",

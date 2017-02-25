@@ -54,6 +54,22 @@ module.exports = [
     controller: 'PageController',
     action: 'admin',
   },
+  {
+    pattern: '/init',
+    controller: 'AuthController',
+    action: 'init',
+  },
+  {
+    pattern: '/admin/login',
+    controller: 'AuthController',
+    action: 'loginPage',
+  },
+  {
+    method: 'post',
+    pattern: '/register',
+    controller: 'AuthController',
+    action: 'register',
+  },
 
   // post page
   {
