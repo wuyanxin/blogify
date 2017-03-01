@@ -8,19 +8,10 @@
 
 require("babel-register");
 let koa = require('koa');
-let render = require('koa-ejs');
 let path = require('path');
 
 let app = koa();
 global.AppConfig = require('./config.js');
-
-// render(app, {
-//   root: path.join(__dirname, './src/views'),
-//   layout: 'default',
-//   viewExt: 'html',
-//   cache: app.env === 'production',
-//   debug: app.env !== 'production'
-// });
 
 require('koa-react-views')(app, {
   viewExt: '.jsx',
