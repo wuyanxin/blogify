@@ -49,6 +49,10 @@ function* category() {
 }
 
 function* admin() {
+  if (!this.session.admin) {
+    this.redirect('/admin/login');
+    return;
+  }
   this.response.status = 200;
   this.response.type = 'text/html';
   this.body = fs.createReadStream(`${process.cwd()}/admin/dist/index.html`);

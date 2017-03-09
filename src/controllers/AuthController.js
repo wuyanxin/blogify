@@ -26,10 +26,23 @@ function* loginPage() {
 
 function* login() {
   let { email, password } = this.request.body;
+  let admin = yield Admin.findOne({ email });
+  if (admin) {
+    let pwCheck = yield bcrypt.compare(password, admin.password);
+    if (pwCheck) {
+      this.session.admin = admin;
+      this.redirect('/admin');
+      return;
+    }
+  }
+
+  this.status = 400;
+  this.body = '邮箱或密码错误';
 }
 
 module.exports = {
   init,
   register,
   loginPage,
+  login,
 };

@@ -50,7 +50,12 @@ module.exports = [
 
   // admin
   {
-    pattern: '/admin',
+    pattern: '/admin/login',
+    controller: 'AuthController',
+    action: 'loginPage',
+  },
+  {
+    pattern: '/admin*',
     controller: 'PageController',
     action: 'admin',
   },
@@ -60,15 +65,16 @@ module.exports = [
     action: 'init',
   },
   {
-    pattern: '/admin/login',
-    controller: 'AuthController',
-    action: 'loginPage',
-  },
-  {
     method: 'post',
     pattern: '/register',
     controller: 'AuthController',
     action: 'register',
+  },
+  {
+    method: 'post',
+    pattern: '/login',
+    controller: 'AuthController',
+    action: 'login',
   },
 
   // post page

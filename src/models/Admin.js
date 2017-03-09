@@ -16,7 +16,7 @@ const Post = {
       type: Sequelize.STRING,
       allowNull: false,
       set: function (value) {
-        var hash = bcrypt.hashSync(value, 10);
+        var hash = bcrypt.hashSync(value, 3);
         this.setDataValue('password', hash);
       },
     },
