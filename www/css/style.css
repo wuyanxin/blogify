@@ -190,3 +190,34 @@ button, input, select, textarea {
   margin-left: 15px;
   color: #AAA;
 }
+
+
+/* Login */
+.adminLogin {
+  position: absolute;
+  width: 400px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -140px;
+  border: 1px solid #EEE;
+  border-radius: 8px;
+  color: #515348;
+  padding: 30px 50px 30px 50px;
+  background: #EEE;
+}
+
+.adminLogin .form-group {
+  margin: 10px auto;
+}
+
+.adminLogin input {
+  line-height: 30px;
+  padding: 3px 10px;
+  width: 100%;
+}
+
+.adminLogin input[type=submit] {
+  width: 100px;
+}

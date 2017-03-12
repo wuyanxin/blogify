@@ -1,15 +1,24 @@
 const React = require('react');
+const DefaultLayout = require('../layouts/default');
 
 const Init = React.createClass({
   render: function () {
     return (
-      <div className="initAdmin">
-        <form method="post" action="/login">
-          邮箱：<input name="email"/><br/>
-          密码：<input type="password" name="password"/><br />
-          <input type="submit" value="登陆"/>
-        </form>
-      </div>
+      <DefaultLayout>
+        <div className="adminLogin">
+          <form method="post" action="/login" className="form">
+            <div className="form-group">
+              <label for="loginEmail">Email</label>
+              <input type="email" className="form-control" name="email" id="loginEmail" placeholder="Email" />
+            </div>
+            <div className="form-group">
+              <label for="password">Password</label>
+              <input type="password" className="form-control" name="password" id="loginPassword" placeholder="Password" />
+            </div>
+            <input type="submit" value="登陆" className="btn btn-primary pull-right"/>
+          </form>
+        </div>
+      </DefaultLayout>
     );
   },
 });
